@@ -1,37 +1,25 @@
-
 function largestPrimeFactor(number) {
-    let primesList = [];
-    let primeFactorsOfNumber = [];
-    
-    
-    for(let i = 2; i <= number; i++ ){
-        let isPrime = true;
-        
-        for (let j = 2; j <= Math.floor(Math.sqrt(i)); j++){
-            if (i % j === 0){
-                isPrime = false;
-                break;
-            }
-        }
-        if(isPrime && number % [i] === 0){
-            primeFactorsOfNumber.push(i);
-        }
+  let primesList = [];
+  let primeFactorsOfNumber = [];
+
+  for (let i = 2; i <= number; i++) {
+    let isPrime = true;
+
+    for (let j = 2; j <= Math.floor(Math.sqrt(i)); j++) {
+      if (i % j === 0) {
+        isPrime = false;
+        break;
+      }
     }
-    let lastIndex = primeFactorsOfNumber.length-1;
-    return primeFactorsOfNumber[lastIndex];
-};
-
-
-
-
+    if (isPrime && number % [i] === 0) {
+      primeFactorsOfNumber.push(i);
+    }
+  }
+  let lastIndex = primeFactorsOfNumber.length - 1;
+  return primeFactorsOfNumber[lastIndex];
+}
 
 console.log(largestPrimeFactor(6008));
-
-
-
-
-
-
 
 /*
 function largestPrimeFactor(number) {
